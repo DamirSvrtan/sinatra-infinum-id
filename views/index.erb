@@ -1,3 +1,8 @@
-<h1> INFINUM ID SINATRA SAMPLE </h1>
+<h2> INFINUM ID SINATRA SAMPLE </h2>
 
-<a href="/auth/infinum">SIGN IN</a>
+<% if signed_in? %>
+  <%= "Hi #{current_user_name}!" %>
+  <a href='/logout'>Sign out if you must</a>
+<% else %>
+  <a href="/auth/infinum">Sign in</a>
+<% end %>
